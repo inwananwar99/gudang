@@ -4,8 +4,9 @@ class Jenis extends CI_Controller{
         $data = [
             'title' => 'jenis',
             'judul' => 'Data Jenis Barang',
+            'level' => 1,
             'jenis' => $this->ModelJenis->getData(),
-            'konten' => 'barang/jenis'
+            'konten' => 'admin/barang/jenis'
         ];
         return $this->load->view('template',$data);
     }

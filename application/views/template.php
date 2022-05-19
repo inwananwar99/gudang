@@ -18,6 +18,8 @@
 	<title>AdminKit Demo - Bootstrap 5 Admin Template</title>
 
 	<link href="<?= base_url('/assets/static/css/app.css')?>" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+
 	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 
@@ -51,10 +53,10 @@
 							<i class="align-middle" data-feather="database"></i> <span class="align-middle">Data Master</span>
               				</a>
 							<div class="dropdown-menu dropdown-menu-end">
-								<a class="dropdown-item" href="pages-profile.html"><i class="align-middle me-1" data-feather="user"></i>Data Customer</a>
-								<a class="dropdown-item" href="#"><i class="align-middle me-1" data-feather="pie-chart"></i>Data Supplier</a>
-								<a class="dropdown-item" href="index.html"><i class="align-middle me-1" data-feather="settings"></i>Data Jenis Barang</a>
-								<a class="dropdown-item" href="#"><i class="align-middle me-1" data-feather="help-circle"></i>Data Barang</a>
+								<a class="dropdown-item" href="<?= base_url('Customer');?>"><i class="align-middle me-1" data-feather="user"></i>Data Customer</a>
+								<a class="dropdown-item" href="<?= base_url('Supplier');?>"><i class="align-middle me-1" data-feather="pie-chart"></i>Data Supplier</a>
+								<a class="dropdown-item" href="<?= base_url('Jenis');?>"><i class="align-middle me-1" data-feather="settings"></i>Data Jenis Barang</a>
+								<a class="dropdown-item" href="<?= base_url('Barang');?>"><i class="align-middle me-1" data-feather="help-circle"></i>Data Barang</a>
 							</div>
 						</li>
 					<li class="sidebar-item">
@@ -564,6 +566,8 @@
 			});
 		});
 	</script>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
 
 </body>
 

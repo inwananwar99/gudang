@@ -3,8 +3,9 @@ class Supplier extends CI_Controller{
     public function index(){
         $data = [
             'title' => 'supplier',
+            'level' => 1,
             'judul' => 'Data Supplier',
-            'konten' => 'barang/supplier',
+            'konten' => 'admin/barang/supplier',
             'supplier' => $this->ModelSupplier->getData()
         ];
         return $this->load->view('template',$data);

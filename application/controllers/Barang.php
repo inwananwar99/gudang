@@ -4,7 +4,8 @@ class Barang extends CI_Controller{
         $data = [
             'title' => 'barang',
             'judul' => 'Data Barang',
-            'konten' => 'barang/barang',
+            'level' => 1,
+            'konten' => 'admin/barang/barang',
             'barang' => $this->ModelBarang->getJoin(),
             'jenis' => $this->ModelJenis->getData(),
             'supplier' => $this->ModelSupplier->getData()
