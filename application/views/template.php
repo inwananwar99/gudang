@@ -15,11 +15,11 @@
 
 	<link rel="canonical" href="https://demo-basic.adminkit.io/" />
 
-	<title>AdminKit Demo - Bootstrap 5 Admin Template</title>
+	<title>Gudang - <?= $judul;?></title>
 
 	<link href="<?= base_url('/assets/static/css/app.css')?>" rel="stylesheet">
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
-
+	<link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css">
 	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 
@@ -60,7 +60,7 @@
 							</div>
 						</li>
 					<li class="sidebar-item">
-						<a class="sidebar-link" href="pages-profile.html">
+						<a class="sidebar-link" href="<?= base_url('Barang/kategori'); ?>">
 						<i class="align-middle" data-feather="bookmark"></i> <span class="align-middle">Kategori Barang</span>
 						</a>
 					</li>
@@ -112,7 +112,7 @@
             </li>  
           <?php }else if($level == 3){ ?>
             <li class="sidebar-item">
-              <a class="sidebar-link" href="pages-sign-up.html">
+              <a class="sidebar-link" href="<?= base_url('Order/pre_order');?>">
                 <i class="align-middle" data-feather="user-plus"></i> <span class="align-middle">Pre Order</span>
               </a>
             </li>
@@ -288,7 +288,26 @@
               </a>
 
 							<a class="nav-link dropdown-toggle d-none d-sm-inline-block" href="#" data-bs-toggle="dropdown">
-                <img src="img/avatars/avatar.jpg" class="avatar img-fluid rounded me-1" alt="Charles Hall" /> <span class="text-dark">Charles Hall</span>
+                <span class="text-dark"><?= $this->session->userdata('username'); ?> <?php
+				 $level = $this->session->userdata('level');
+				 if($level == 1){
+				 ?>
+				(Admin) 
+				<?php
+				 }else if($level == 2){
+				?>
+				(QC) 
+				<?php
+				 }else if($level == 3){
+				?>
+				(Picker) 
+				<?php
+				 }else if($level == 4){
+				?>
+				(Kepala Gudang) 
+				<?php }
+				?>	
+			</span>
               </a>
 							<div class="dropdown-menu dropdown-menu-end">
 								<a class="dropdown-item" href="pages-profile.html"><i class="align-middle me-1" data-feather="user"></i> Profile</a>
@@ -307,7 +326,7 @@
 			<main class="content">
 				<div class="container-fluid p-0">
 
-					<h1 class="h3 mb-3">Dashboard</h1>
+					<h1 class="h3 mb-3"><?= $judul;?></h1>
           <?php $this->load->view($konten); ?>
 
 				</div>
@@ -568,7 +587,12 @@
 	</script>
 <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
-
+<script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+<script>
+	$(document).ready( function () {
+    $('#myTable').DataTable();
+} );
+</script>
 </body>
 
 </html>

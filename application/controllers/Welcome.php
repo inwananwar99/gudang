@@ -32,24 +32,44 @@ class Welcome extends CI_Controller {
 		if($getData){
 			if($getData['level'] == 1){
 				if($data['password'] == $getData['password']){
+					$d1 = [
+						'username' => $getData['username'],
+						'level' => $getData['level'] 
+					];
+					$this->session->set_userdata($d1);
 					redirect('Welcome/dashboard/'.$getData['level']);
 				}else{
 					echo 'password anda salah';
 				}
 			}else if($getData['level'] == 2){
 				if($data['password'] == $getData['password']){
+					$d2 = [
+						'username' => $getData['username'],
+						'level' => $getData['level'] 
+					];
+					$this->session->set_userdata($d2);
 					redirect('Welcome/dashboard/'.$getData['level']);
 				}else{
 					echo 'password anda salah';
 				}
 			}else if($getData['level'] == 3){
 				if($data['password'] == $getData['password']){
+					$d3 = [
+						'username' => $getData['username'],
+						'level' => $getData['level'] 
+					];
+					$this->session->set_userdata($d3);
 					redirect('Welcome/dashboard/'.$getData['level']);
 				}else{
 					echo 'password anda salah';
 				}
 			}else if($getData['level'] == 4){
 				if($data['password'] == $getData['password']){
+					$d4 = [	
+						'username' => $getData['username'],
+						'level' => $getData['level'] 
+					];
+					$this->session->set_userdata($d4);
 					redirect('Welcome/dashboard/'.$getData['level']);
 				}else{
 					echo 'password anda salah';

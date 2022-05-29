@@ -42,5 +42,16 @@ class Barang extends CI_Controller{
         $this->session->set_flashdata('message','<div class="alert alert-success" role="alert">Berhasil menghapus Data Barang!</div>');
         return redirect('Barang');
     }
+
+    public function kategori(){
+        $data = [
+            'title' => 'kategori',
+            'judul' => 'Data Kategori Barang',
+            'level' => 1,
+            'konten' => 'admin/barang/kategori',
+            'kategori' => $this->ModelBarang->getJoin()
+        ];
+        return $this->load->view('template',$data);      
+    }
 }
 ?>
