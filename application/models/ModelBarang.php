@@ -5,7 +5,11 @@ class ModelBarang extends CI_Model{
     }
     
     public function add($data){
-        return $this->db->insert('barang', $data);
+        if($data['tgl_po']){
+            return $this->db->insert('data_po', $data);
+        }else{
+            return $this->db->insert('barang', $data);
+        }
     }
 
     public function getJoin(){
